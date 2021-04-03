@@ -1,5 +1,4 @@
 import AWS from "aws-sdk";
-import Model from "../../domain/models/model";
 import PersistantStorage from "../../ports/persistantStorage";
 
 class DynamoDB implements PersistantStorage {
@@ -11,7 +10,7 @@ class DynamoDB implements PersistantStorage {
         this.DynamoDB = new AWS.DynamoDB();
     }
 
-    public async store(data: object): Promise<boolean> {
+    public store(data: object): Promise<void> {
         const primaryId = data["event-data"].id;
         const params = {
             TableName: this.tableName,
@@ -21,9 +20,7 @@ class DynamoDB implements PersistantStorage {
             },
         };
 
-        await this.DynamoDB.putItem(params).promise();
-
-        return true;
+        return this.DynamoDB.putItem(params).promise();
     }
 }
 

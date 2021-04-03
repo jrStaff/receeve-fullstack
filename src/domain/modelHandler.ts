@@ -14,10 +14,15 @@ export default class ModelHandler {
         this.input = input;
     }
 
-    public async handle(data: object): Promise<void> {
-        if (this.storage !== null) { await this.storage.store(data); }
+    public async handle(data: object): Promise<any> {
+        const promises: Array<Promise<any>> = [];
+
+        if (this.storage !== null) { promises.push(this.storage.store(data)); }
 
         const model: Model = this.input.process(data);
-        if (this.publisher !== null) { await this.publisher.publish(model); }
+
+        if (this.publisher !== null) { promises.push(this.publisher.publish(model)); }
+
+        return Promise.all(promises);
     }
 }

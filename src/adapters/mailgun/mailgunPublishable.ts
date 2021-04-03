@@ -1,9 +1,9 @@
 import Publishable from "../../domain/models/publishable";
 
 export default class MailgunPublishable implements Publishable {
-    type: string;
-    timestamp: number;
-    provider: string;
+    public type: string;
+    public timestamp: number;
+    public provider: string;
 
     constructor(type: string, timestamp: number) {
         this.type = type;

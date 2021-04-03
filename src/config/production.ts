@@ -6,4 +6,4 @@ const productionConfig = {
     mailgunEventTable: "rawMailgunEvents",
 };
 export default productionConfig;
-
+

@@ -11,21 +11,13 @@ class SNS implements Publisher {
         this.SNS = new AWS.SNS();
     }
 
-    public async publish(model: Model): Promise<boolean> {
+    public publish(model: Model): Promise<void> {
         const event = {
             Message: JSON.stringify(model),
             TopicArn: this.topicArn,
         };
 
-        try {
-            console.log(event);
-            await this.SNS.publish(event).promise();
-        } catch (e) {
-            console.log(e);
-            throw Error(`Failed to publish event: ${event}`);
-        }
-
-        return true;
+        return this.SNS.publish(event).promise();
     }
 }
 

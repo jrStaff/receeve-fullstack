@@ -161,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/mailgun-event-handler/prod/1617402195891-2021-04-02T22:23:15.891Z/mailgunEventHandler.zip"
+          "S3Key": "serverless/mailgun-event-handler/prod/1617413229609-2021-04-03T01:27:09.609Z/mailgunEventHandler.zip"
         },
         "Handler": "index.mailgunEventHandler",
         "Runtime": "nodejs14.x",
@@ -179,14 +179,14 @@
         "MailgunEventHandlerLogGroup"
       ]
     },
-    "MailgunEventHandlerLambdaVersionTdefBXg8l8dI4tDHQHKPidMgBj1k5CuUO9ZzCFMaPjw": {
+    "MailgunEventHandlerLambdaVersionqo3NNjvu3i19HpuQBedt4QxDMmAnv2SfSdJk5WIFyg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MailgunEventHandlerLambdaFunction"
         },
-        "CodeSha256": "MkKlDyKKD7BVizWp2Nr0fe8g58aS9EURO4pVlZznKeg="
+        "CodeSha256": "YpKM6i6gjPwmfGTmKHKrcgmP0vobxcqjj0g7xN4djbg="
       }
     },
     "ApiGatewayRestApi": {
@@ -259,7 +259,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1617402186369": {
+    "ApiGatewayDeployment1617413218909": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -318,7 +318,7 @@
     "MailgunEventHandlerLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MailgunEventHandlerLambdaVersionTdefBXg8l8dI4tDHQHKPidMgBj1k5CuUO9ZzCFMaPjw"
+        "Ref": "MailgunEventHandlerLambdaVersionqo3NNjvu3i19HpuQBedt4QxDMmAnv2SfSdJk5WIFyg"
       }
     },
     "ServiceEndpoint": {
