@@ -1,5 +1,25 @@
+# How to create .zip for deployment!
 
-HOW TO DEPLOY NODE JS BELOW:
-https://docs.aws.amazon.com/lambda/latest/dg/nodejs-package.html
+```
+npm install --also=dev
+```
 
-serverless config credentials --provider aws --key AKIAUUIQIGXWIVXOM3XP --secret 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
+#### Fill in the secrets to deploy to AWS below
+```
+serverless config credentials --provider aws --key CLIENTID --secret SECRET
+```
+
+
+#### (IMPORTANT) Fill in src/config/production with ARN's to target a topic and dynamoDB table 
+####  Provide the webhookSigningKey for authenticating Mailgun Events
+
+
+### Then
+```
+serverless deploy
+```
+
+
+# Design Pattern
+
+https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)
