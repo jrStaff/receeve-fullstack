@@ -4,7 +4,7 @@
 npm install --also=dev
 ```
 
-#### Fill in the secrets to deploy to AWS below
+#### Fill in the secrets/user to deploy to AWS Lambda below
 ```
 serverless config credentials --provider aws --key CLIENTID --secret SECRET
 ```
